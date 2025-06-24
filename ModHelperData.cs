@@ -8,6 +8,6 @@ public static class ModHelperData
 
     public const string Description = "My first mod";
 
-    public const string RepoOwner = ""; // TODO add your github username hero, also in the download url in README.md
-    public const string RepoName = ""; // TODO add your repo name here, also in the download url in README.md
+    public const string RepoOwner = "BoneheadBreaker"; // TODO add your github username hero, also in the download url in README.md
+    public const string RepoName = "FIRSTMOD"; // TODO add your repo name here, also in the download url in README.md
 }
