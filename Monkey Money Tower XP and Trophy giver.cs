@@ -19,13 +19,14 @@ using System.Collections.Generic;
 
 namespace Monkey_Money_Tower_XP_and_Trophy_giver;
 
-public class Monkey Money_Tower_XP_and_Trophy_giver : BloonsTD6Mod
+namespace Monkey_Money_Tower_XP_and_Trophy_giver
 {
-    public override void OnApplicationStart() // runs when started
+    public class Monkey_Money_Tower_XP_and_Trophy_giver : BloonsTD6Mod
     {
-        // prints to the console
-        MelonLogger.Msg("Monkey Money Tower XP and Trophy giver loaded");
-    }
+        public override void OnApplicationStart() // runs when started
+        {
+            // prints to the console
+            MelonLogger.Msg("Monkey Money Tower XP and Trophy giver loaded");
 
     [HarmonyPatch(typeof(MainMenu), "Open")]
     public class MainMenuPatch
