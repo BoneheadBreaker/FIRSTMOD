@@ -1,5 +1,5 @@
 <h1 align="center">
-<a href="https://github.com/BoneheadBreaker/FIRSTMOD/releases/latest/download/FIRSTMOD.dll">
+<a href="https://github.com/BoneheadBreaker/Monkey_Money_Tower_XP_and_Trophy_giver/releases/latest/download/FIRSTMOD.dll">
     <img align="left" alt="Icon" height="90" src="Icon.png">
     <img align="right" alt="Download" height="75" src="https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/master/BloonsTD6%20Mod%20Helper/Resources/DownloadBtn.png">
 </a>
@@ -7,7 +7,7 @@ OP Money, knowledge, tower xp, trophy items
 </h1>
 
 ### Downloads
-<h1 aling="left"><img alt="GitHub all releases" height="25" src="https://img.shields.io/github/downloads/BoneheadBreaker/FIRSTMOD/total?label=Total%20Dowloads"></h1>
+<h1 aling="left"><img alt="GitHub all releases" height="25" src="https://img.shields.io/github/downloads/BoneheadBreaker/Monkey_Money_Tower_XP_and_Trophy_giver/total?label=Total%20Dowloads"></h1>
 
 This mod gives you loads of monkey money, monkey knowledge, tower xp, and every item in the trophy store
 
