@@ -1,5 +1,3 @@
-name: Build
-
 on:
   push:
     branches:
@@ -9,7 +7,6 @@ on:
 
 env:
   PROJECT_NAME: Monkey Money Tower XP and Trophy giver
-  
   MOD_HELPER_NAME: Btd6ModHelper
   BLOONSTD6: ./BloonsTD6
 
@@ -25,9 +22,8 @@ jobs:
         with:
           path: ${{ env.PROJECT_NAME }}
 
-
       - name: Download Latest MelonLoader
-        if: env.MELONLOADER_BRANCH == ''
+        if: ${{ env.MELONLOADER_BRANCH == '' }}
         uses: robinraju/release-downloader@v1.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -36,14 +32,14 @@ jobs:
           tarBall: false
           zipBall: false
           latest: true
+
       - name: Extract Latest MelonLoader
-        if: env.MELONLOADER_BRANCH == ''
+        if: ${{ env.MELONLOADER_BRANCH == '' }}
         shell: bash
         run: unzip MelonLoader.x64.zip -d ${{ env.BLOONSTD6 }}
 
-
       - name: Download Specific MelonLoader
-        if: env.MELONLOADER_BRANCH != ''
+        if: ${{ env.MELONLOADER_BRANCH != '' }}
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -53,7 +49,6 @@ jobs:
           repo: LavaGang/MelonLoader
           path: ${{ env.BLOONSTD6 }}
 
-
       - name: Clone Dependencies Repo
         uses: actions/checkout@master
         with:
@@ -62,10 +57,9 @@ jobs:
           ref: main
           path: ${{ env.BLOONSTD6 }}/MelonLoader/Il2CppAssemblies
 
-
       - name: Download Latest Mod Helper
+        if: ${{ env.MOD_HELPER_BRANCH == '' }}
         uses: robinraju/release-downloader@v1.4
-        if: env.MOD_HELPER_BRANCH == ''
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: gurrenm3/BTD-Mod-Helper
@@ -75,10 +69,9 @@ jobs:
           zipBall: false
           latest: true
 
-
       - name: Download Specific Mod Helper
+        if: ${{ env.MOD_HELPER_BRANCH != '' }}
         uses: dawidd6/action-download-artifact@v4
-        if: env.MOD_HELPER_BRANCH != ''
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: build.yml
@@ -86,7 +79,6 @@ jobs:
           branch: ${{ env.MOD_HELPER_BRANCH }}
           repo: gurrenm3/BTD-Mod-Helper
           path: ${{ env.BLOONSTD6 }}/Mods/
-
 
       - name: Download btd6.targets
         shell: bash
@@ -96,16 +88,13 @@ jobs:
           fi
           wget https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/master/BloonsTD6%20Mod%20Helper/btd6.targets
 
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
 
-
       - name: Build
         run: dotnet build -c Release -p:BloonsTD6="../${{ env.BLOONSTD6 }}" "${{ env.PROJECT_NAME }}/${{ env.PROJECT_NAME }}.csproj"
-
 
       - name: Upload Mod DLL
         uses: actions/upload-artifact@v4
@@ -113,10 +102,9 @@ jobs:
           name: ${{ env.PROJECT_NAME }}.dll
           path: ${{ env.BLOONSTD6 }}/Mods/${{ env.PROJECT_NAME }}.dll
 
-
       - name: Release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
         with:
           files: ${{ env.BLOONSTD6 }}/Mods/${{ env.PROJECT_NAME }}.dll
           body_path: ${{ env.PROJECT_NAME }}/LATEST.md
