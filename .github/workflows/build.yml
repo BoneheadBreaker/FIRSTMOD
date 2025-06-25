@@ -8,7 +8,7 @@ on:
       - '*'
 
 env:
-  PROJECT_NAME: FIRSTMOD
+  PROJECT_NAME: Monkey Money Tower XP and Trophy giver
   
   MOD_HELPER_NAME: Btd6ModHelper
   BLOONSTD6: ./BloonsTD6
