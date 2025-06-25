@@ -1,4 +1,3 @@
-using MelonLoader;
 using BTD_Mod_Helper;
 using Monkey_Money_Tower_XP_and_Trophy_giver;
 using Il2CppAssets.Scripts.Models;
@@ -17,8 +16,6 @@ using System.Collections.Generic;
 [assembly: MelonInfo(typeof(Monkey_Money_Tower_XP_and_Trophy_giver.Monkey_Money_Tower_XP_and_Trophy_giver), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
-namespace Monkey_Money_Tower_XP_and_Trophy_giver;
-
 namespace Monkey_Money_Tower_XP_and_Trophy_giver
 {
     public class Monkey_Money_Tower_XP_and_Trophy_giver : BloonsTD6Mod
@@ -27,6 +24,8 @@ namespace Monkey_Money_Tower_XP_and_Trophy_giver
         {
             // prints to the console
             MelonLogger.Msg("Monkey Money Tower XP and Trophy giver loaded");
+        }
+    }
 
     [HarmonyPatch(typeof(MainMenu), "Open")]
     public class MainMenuPatch
@@ -37,6 +36,7 @@ namespace Monkey_Money_Tower_XP_and_Trophy_giver
             // give 999999999 monkey money
             ModSettingInt Amount_monkey_money = new ModSettingInt(999999999);
             Game.instance.playerService.Player.Data.monkeyMoney.Value = Amount_monkey_money;
+            
             // give 999999999 xp to every tower
             ModSettingInt xp = new ModSettingInt(999999999);
             for (int i = 0; i < Game.instance.model.towers.Count; i++)
@@ -46,11 +46,12 @@ namespace Monkey_Money_Tower_XP_and_Trophy_giver
             foreach (var item in Game.instance.playerService.Player.Data.towerXp)
             {
                 Game.instance.playerService.Player.Data.towerXp[item.key].Value = xp;
+            }
+            
             // give 999999999 monkey knowledge
             ModSettingInt Amount_monkey_knowledge = new ModSettingInt(999999999);
             Game.instance.playerService.Player.Data.KnowledgePoints = Amount_monkey_knowledge;
             
-            }
             // gives all items in trophy store
             var testList = new List<string>();
             foreach (var item in Game.instance.playerService.Player.Data.trophyStorePurchasedItems)
