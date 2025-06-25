@@ -12,6 +12,7 @@ using Il2CppAssets.Scripts.Unity.UI_New.Main;
 using Il2CppAssets.Scripts.Unity.Bridge;
 using Il2CppAssets.Scripts.Data;
 using System.Collections.Generic;
+using MelonLoader;
 
 [assembly: MelonInfo(typeof(Monkey_Money_Tower_XP_and_Trophy_giver.Monkey_Money_Tower_XP_and_Trophy_giver), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
