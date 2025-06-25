@@ -1,6 +1,6 @@
 using MelonLoader;
 using BTD_Mod_Helper;
-using FIRSTMOD;
+using Monkey_Money_Tower_XP_and_Trophy_giver;
 using Il2CppAssets.Scripts.Models;
 using BTD_Mod_Helper.Extensions;
 using Il2CppAssets.Scripts.Models.Towers.Weapons;
@@ -14,17 +14,17 @@ using Il2CppAssets.Scripts.Unity.Bridge;
 using Il2CppAssets.Scripts.Data;
 using System.Collections.Generic;
 
-[assembly: MelonInfo(typeof(FIRSTMOD.FIRSTMOD), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
+[assembly: MelonInfo(typeof(Monkey_Money_Tower_XP_and_Trophy_giver.Monkey_Money_Tower_XP_and_Trophy_giver), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
-namespace FIRSTMOD;
+namespace Monkey_Money_Tower_XP_and_Trophy_giver;
 
-public class FIRSTMOD : BloonsTD6Mod
+public class Monkey Money_Tower_XP_and_Trophy_giver : BloonsTD6Mod
 {
     public override void OnApplicationStart() // runs when started
     {
         // prints to the console
-        MelonLogger.Msg("FIRSTMOD loaded");
+        MelonLogger.Msg("Monkey Money Tower XP and Trophy giver loaded");
     }
 
     [HarmonyPatch(typeof(MainMenu), "Open")]

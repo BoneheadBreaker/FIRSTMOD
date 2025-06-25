@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <RootNamespace>FIRSTMOD</RootNamespace>
+        <RootNamespace>Monkey Money Tower XP and Trophy giver</RootNamespace>
         <Configurations>Debug;Release</Configurations>
         <Nullable>enable</Nullable>
-        <AssemblyName>FIRSTMOD</AssemblyName>
+        <AssemblyName>Monkey Money Tower XP and Trophy giver</AssemblyName>
         <LangVersion>latest</LangVersion>
         <Optimize>False</Optimize>
         <DebugType>embedded</DebugType>

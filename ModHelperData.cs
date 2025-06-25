@@ -1,10 +1,10 @@
-namespace FIRSTMOD;
+namespace Monkey_Money_Tower_XP_and_Trophy_giver;
 
 public static class ModHelperData
 {
     public const string WorksOnVersion = "44.0";
     public const string Version = "1.0.3";
-    public const string Name = "FIRSTMOD";
+    public const string Name = "Monkey Money Tower XP and Trophy giver";
 
     public const string Description = "This mod gives you monkey knowledge, trophys and cash.";
 
